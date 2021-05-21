@@ -1,28 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ui-alert v-if="!!error" type="error" :text="error" />
+    <main-header />
+    <main-content />
+    <main-footer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapState, mapActions } from 'vuex'
+import MainHeader from '@/components/layout/MainHeader'
+import MainContent from '@/components/layout/MainContent'
+import MainFooter from '@/components/layout/MainFooter'
+import UiAlert from '@/components/ui/UiAlert'
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
+    MainHeader,
+    MainContent,
+    MainFooter,
+    UiAlert,
+  },
+
+  computed: {
+    ...mapState({
+      error: ({ joke }) => joke.error,
+    }),
+  },
+
+  async created() {
+    await this.handleApiError(null)
+
+    try {
+      await this.getJokesCategories()
+    } catch (e) {
+      await this.handleApiError(e)
+    }
+  },
+
+  methods: {
+    ...mapActions({
+      getJokesCategories: 'joke/getJokesCategories',
+      handleApiError: 'joke/handleApiError',
+    }),
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

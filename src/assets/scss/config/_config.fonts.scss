@@ -1,0 +1,17 @@
+@include css-vars(
+  (
+    font-sans: "'Montserrat', sans-serif",
+    font-base: 14px,
+    font-leading: 1.5,
+    font-weight-base: 300,
+    font-weight-bold: 500,
+  )
+);
+
+.theme-dark {
+  @include update-var(
+    (
+      font-weight-base: 400,
+    )
+  );
+}

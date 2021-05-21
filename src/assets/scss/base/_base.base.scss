@@ -1,0 +1,29 @@
+html {
+  font-size: get-var(font-base); // TODO check body value in mq's
+}
+
+body {
+  font-family: get-var(font-sans);
+  color: get-var(color-base);
+  line-height: get-var(font-leading);
+  font-weight: get-var(font-weight-base);
+  width: get-var(boxed-width);
+  margin: get-var(boxed-margin);
+  background-color: get-var(color-white);
+  transition: background-color 0.15s ease-out;
+  max-width: 100%;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-kerning: none;
+  font-kerning: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
