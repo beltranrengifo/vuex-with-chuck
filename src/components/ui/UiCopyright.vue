@@ -1,5 +1,5 @@
 <template>
-  <p>copy!</p>
+  <p>fancy copyright here!</p>
 </template>
 
 <script>

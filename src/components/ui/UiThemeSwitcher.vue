@@ -1,5 +1,5 @@
 <template>
-  <p>theme!</p>
+  <p>fancy theme-switcher here!</p>
 </template>
 
 <script>
