@@ -4,6 +4,7 @@ const state = () => ({
   categories: null,
   currentJoke: null,
   error: null,
+  // userJokeCount: 0, TODO CLICKED JOKES COUNT
 })
 
 const getters = {}

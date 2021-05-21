@@ -1,5 +1,6 @@
 const state = () => ({
   modalContent: null,
+  // currentTheme: 'light', TODO THEME SWITCHER
 })
 
 const getters = {}
