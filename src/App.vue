@@ -30,15 +30,7 @@ export default {
     }),
   },
 
-  async created() {
-    await this.handleApiError(null)
-
-    try {
-      await this.getJokesCategories()
-    } catch (e) {
-      await this.handleApiError(e)
-    }
-  },
+  async created() {},
 
   methods: {
     ...mapActions({
